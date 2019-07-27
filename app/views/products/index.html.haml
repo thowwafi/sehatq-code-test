@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-md-12
+      .title-section
+        %h1 Listing products  
+      .pull-right  
+        = link_to 'New Product', new_product_path, class: "btn btn-primary"
+  
+  .row.products-section
+    - @products.each do |product|
+      .col-md-4.m-t-20
+        .product-image-wrapper
+          = image_tag product.image.url
+        .text-center.product-detail
+          %h3= link_to product.name, product_path(product)
+          %h6= number_to_idr(product.price)

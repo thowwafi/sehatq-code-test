@@ -1,0 +1,10 @@
+.container
+  %ol.breadcrumb
+    %li.breadcrumb-item
+      %a{:href => "/"}
+    %li.breadcrumb-item.active
+      %a{:href => "/products"} Product
+    %li.breadcrumb-item.active New
+
+  = simple_form_for(@product, url: products_path, method: :post) do |f|
+    = render 'form', f: f

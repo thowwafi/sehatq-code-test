@@ -1,0 +1,36 @@
+.container
+  .row
+    .col-md-12
+      .title-section
+        %h1 My Orders
+
+
+  %table.table
+    %thead
+      %tr
+        %th Number
+        %th Product Name
+        %th Qty
+        %th Total
+        %th User
+        %th State
+        %th
+        %th
+        %th
+
+    %tbody
+      - @orders.each do |order|
+        %tr
+          %td= order.number
+          %td= link_to order.product.name, product_path(order.product.id)
+          %td= order.qty
+          %td= order.total
+          %td= order.user_id
+          %td= order.state
+          - if order.state == "pending"
+            %td
+              = link_to 'Cancel', cancel_purchase_order_path(order.id, qty: order.qty), data: { confirm: 'Are you sure?' }, class:"btn btn-danger"
+            %td= link_to 'Purchase', purchase_order_path(order.id), class:"btn btn-success"
+
+  %br
+

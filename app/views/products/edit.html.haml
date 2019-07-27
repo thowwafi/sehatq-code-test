@@ -1,0 +1,12 @@
+.container
+  %ol.breadcrumb
+    %li.breadcrumb-item
+      %a{:href => "/"}
+    %li.breadcrumb-item.active
+      %a{:href => "/products"} Products
+    %li.breadcrumb-item.active
+      %a{:href => "/products/#{params[:id]}"}= params[:id]
+    %li.breadcrumb-item.active Edit
+
+  = simple_form_for(@product, url: product_path(@product), method: :put) do |f|
+    = render 'form', f: f

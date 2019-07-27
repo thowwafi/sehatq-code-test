@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  qty: 1
+  total: 9.99
+  user_id: 1
+  state: MyString
+
+two:
+  number: MyString
+  qty: 1
+  total: 9.99
+  user_id: 1
+  state: MyString

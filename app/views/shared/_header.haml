@@ -1,0 +1,14 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-dark
+  .container
+    %button.navbar-toggler{"aria-controls" => "navbarTogglerDemo03", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarTogglerDemo03", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    %a.navbar-brand.text-white{:href => "/"} SehatQ Coding Test
+    #navbarTogglerDemo03.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      %form.form-inline.my-2.my-lg-0
+        - if user_signed_in?
+          = link_to 'All Products', products_path, class: "btn btn-outline-info"
+          .m-2
+          = link_to 'My Orders', orders_path, class: "btn btn-outline-warning"
+          .m-2
+          = link_to "Log out", destroy_user_session_path, :method => :delete, class:"btn btn-outline-success"
